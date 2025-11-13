@@ -18,15 +18,15 @@ class DashboardFragment : Fragment() {
         // Inflate layout fragment_dashboard.xml
         val view = inflater.inflate(R.layout.fragment_dashboard, container, false)
 
-        // Ambil referensi komponen dari layout
+        // Ambil referensi dari layout
         val tabLayout = view.findViewById<TabLayout>(R.id.tabLayout)
         val viewPager = view.findViewById<ViewPager2>(R.id.viewPager)
 
-        // Set adapter untuk ViewPager2
+        // Pasang adapter
         val adapter = DashboardPagerAdapter(this)
         viewPager.adapter = adapter
 
-        // Sinkronkan TabLayout dengan ViewPager2
+        // Hubungkan TabLayout dengan ViewPager2
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             when (position) {
                 0 -> tab.text = "Berita"
